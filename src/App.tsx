@@ -6,11 +6,12 @@ import { Suspense, useContext, useState } from 'react';
 import Loading from './components/Loading';
 import './styles/index.scss';
 import { useTheme } from './theme/useTheme';
+import { classNames } from './helpers/classes/classNames';
 
 const App: React.FC = () => {
 	const { theme, toggleTheme } = useTheme();
 	return (
-		<div className={`app ${theme}`}>
+		<div className={classNames('app', {}, [theme])}>
 			<Link to={'/'}>MainPage</Link>
 			<Link to={'/about'}>AboutPage</Link>
 			<button onClick={toggleTheme}>Тема</button>
