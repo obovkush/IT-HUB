@@ -15,12 +15,7 @@ const App: React.FC = () => {
 			<Link to={'/'}>MainPage</Link>
 			<Link to={'/about'}>AboutPage</Link>
 			<button onClick={toggleTheme}>Тема</button>
-			<Suspense fallback={<p><i>Loading...</i></p>}>
-				<Routes>
-					<Route path={'/about'} element={<AboutPage />} />
-					<Route path={'/'} element={<MainPage />} />
-				</Routes>
-			</Suspense>
+
 		</div>
 	);
 };
