@@ -39,7 +39,17 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 		exclude: /node_modules/,
 	};
 
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader'
+            }
+        ]
+    }
+
     return [
+        fileLoader,
         svgLoader,
         typescriptLoader,
         cssLoader,
