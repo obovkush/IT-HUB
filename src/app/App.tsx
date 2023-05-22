@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import './styles/index.scss';
 import {useTheme} from './providers/ThemeProvider';
 import {Navbar} from 'widjets/ui/Navbar';
-import {classNames} from 'shared/lib/helpers/classNames/classNames';
+import {classNames} from 'shared/lib/classNames/classNames';
 
 const App: React.FC = () => {
 	const {theme, toggleTheme} = useTheme();
