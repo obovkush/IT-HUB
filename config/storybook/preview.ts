@@ -1,6 +1,7 @@
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,6 +15,7 @@ export const parameters = {
         StyleDecorator,
         ThemeDecorator,
         RouterDecorator,
+        withRouter,
     ],
 };
 
