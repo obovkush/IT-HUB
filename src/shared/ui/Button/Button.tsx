@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import {ButtonHTMLAttributes, FC} from "react";
@@ -23,6 +24,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
         <button
             className={classNames(cls.Button, {[cls[theme]]: true}, [className])}
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...otherProps}
         >
             {children}

@@ -1,8 +1,5 @@
-import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { Button, ThemeButton } from './Button';
 
 export default {
@@ -13,6 +10,7 @@ export default {
     },
 } as Meta<typeof Button>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
