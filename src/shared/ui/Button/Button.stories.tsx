@@ -8,6 +8,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [ThemeDecorator],
 } as Meta<typeof Button>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -29,10 +30,3 @@ Outline.args = {
     children: 'Text',
     theme: ThemeButton.OUTLINE,
 };
-
-export const OutlineDark = Template.bind({});
-OutlineDark.args = {
-    children: 'Text',
-    theme: ThemeButton.OUTLINE,
-};
-OutlineDark.decorators = [ThemeDecorator];

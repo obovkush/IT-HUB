@@ -11,6 +11,7 @@ export default {
     args: {
         to: '/',
     },
+    decorators: [ThemeDecorator],
 } as Meta<typeof Loader>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -18,7 +19,3 @@ const Template: StoryFn<typeof Loader> = (args) => <Loader {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator];

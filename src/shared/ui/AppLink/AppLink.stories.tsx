@@ -11,6 +11,7 @@ export default {
     args: {
         to: '/',
     },
+    decorators: [ThemeDecorator],
 } as Meta<typeof AppLink>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -33,24 +34,3 @@ Red.args = {
     children: 'Text',
     theme: AppLinkTheme.RED,
 };
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-    children: 'Text',
-    theme: AppLinkTheme.PRIMARY,
-};
-PrimaryDark.decorators = [ThemeDecorator];
-
-export const SecondaryDark = Template.bind({});
-SecondaryDark.args = {
-    children: 'Text',
-    theme: AppLinkTheme.SECONDARY,
-};
-SecondaryDark.decorators = [ThemeDecorator];
-
-export const RedDark = Template.bind({});
-RedDark.args = {
-    children: 'Text',
-    theme: AppLinkTheme.RED,
-};
-RedDark.decorators = [ThemeDecorator];

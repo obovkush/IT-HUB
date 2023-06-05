@@ -1,9 +1,6 @@
-import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { ErrorPage } from './ErrorPage';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 export default {
     title: 'widget/ErrorPage',
@@ -11,14 +8,11 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [ThemeDecorator],
 } as Meta<typeof ErrorPage>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: StoryFn<typeof ErrorPage> = (args) => <ErrorPage {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator];
+export const Default = Template.bind({});
+Default.args = {};
