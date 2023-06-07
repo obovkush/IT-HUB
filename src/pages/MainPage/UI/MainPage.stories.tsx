@@ -8,14 +8,11 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [ThemeDecorator],
 } as Meta<typeof MainPage>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: StoryFn<typeof MainPage> = (args) => <MainPage {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator];
+export const Default = Template.bind({});
+Default.args = {};
