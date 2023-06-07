@@ -1,18 +1,16 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Sidebar } from './Sidebar';
+import type {Meta, StoryObj} from '@storybook/react';
 
-export default {
-    title: 'widget/Sidebar',
+import {Sidebar} from './Sidebar';
+
+const meta: Meta<typeof Sidebar> = {
+    title: 'widjet/Sidebar',
     component: Sidebar,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-    decorators: [ThemeDecorator],
-} as Meta<typeof Sidebar>;
+};
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: StoryFn<typeof Sidebar> = (args) => <Sidebar {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {};
+type Story = StoryObj<typeof Sidebar>;
+
+export const Default: Story = {
+    render: () => <Sidebar />,
+};

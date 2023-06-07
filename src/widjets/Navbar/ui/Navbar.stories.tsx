@@ -1,18 +1,16 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Navbar } from './Navbar';
+import type {Meta, StoryObj} from '@storybook/react';
 
-export default {
-    title: 'widget/Navbar',
+import {Navbar} from './Navbar';
+
+const meta: Meta<typeof Navbar> = {
+    title: 'widjet/Navbar',
     component: Navbar,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-    decorators: [ThemeDecorator],
-} as Meta<typeof Navbar>;
+};
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: StoryFn<typeof Navbar> = (args) => <Navbar {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {};
+type Story = StoryObj<typeof Navbar>;
+
+export const Default: Story = {
+    render: () => <Navbar />,
+};

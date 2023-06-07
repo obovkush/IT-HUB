@@ -1,18 +1,16 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import MainPage from './MainPage';
+import type {Meta, StoryObj} from '@storybook/react';
 
-export default {
+import {MainPage} from './MainPage';
+
+const meta: Meta<typeof MainPage> = {
     title: 'pages/MainPage',
     component: MainPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-    decorators: [ThemeDecorator],
-} as Meta<typeof MainPage>;
+};
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: StoryFn<typeof MainPage> = (args) => <MainPage {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {};
+type Story = StoryObj<typeof MainPage>;
+
+export const Default: Story = {
+    render: () => <MainPage />,
+};

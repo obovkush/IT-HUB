@@ -1,18 +1,16 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { ErrorPage } from './ErrorPage';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import type {Meta, StoryObj} from '@storybook/react';
 
-export default {
-    title: 'widget/ErrorPage',
+import {ErrorPage} from './ErrorPage';
+
+const meta: Meta<typeof ErrorPage> = {
+    title: 'pages/ErrorPage',
     component: ErrorPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-    decorators: [ThemeDecorator],
-} as Meta<typeof ErrorPage>;
+};
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: StoryFn<typeof ErrorPage> = (args) => <ErrorPage {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {};
+type Story = StoryObj<typeof ErrorPage>;
+
+export const Default: Story = {
+    render: () => <ErrorPage />,
+};

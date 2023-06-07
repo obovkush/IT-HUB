@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Button, ThemeButton } from './Button';
 
 export default {
@@ -8,7 +7,6 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [ThemeDecorator],
 } as Meta<typeof Button>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

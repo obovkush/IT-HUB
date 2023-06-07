@@ -1,18 +1,16 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { NotFoundPage } from './NotFoundPage';
+import type {Meta, StoryObj} from '@storybook/react';
 
-export default {
+import {NotFoundPage} from './NotFoundPage';
+
+const meta: Meta<typeof NotFoundPage> = {
     title: 'pages/NotFoundPage',
     component: NotFoundPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-    decorators: [ThemeDecorator],
-} as Meta<typeof NotFoundPage>;
+};
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: StoryFn<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {};
+type Story = StoryObj<typeof NotFoundPage>;
+
+export const Default: Story = {
+    render: () => <NotFoundPage />,
+};
