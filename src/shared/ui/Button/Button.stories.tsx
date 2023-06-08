@@ -1,30 +1,83 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { Button, ThemeButton } from './Button';
+import type {Meta, StoryObj} from '@storybook/react';
+import {Button, ButtonSize, ButtonTheme} from './Button';
 
-export default {
+const meta: Meta<typeof Button> = {
     title: 'shared/Button',
     component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Default: Story = {
+    args: {
+        children: 'Button',
     },
-} as Meta<typeof Button>;
-
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Text',
 };
 
-export const Clear = Template.bind({});
-Clear.args = {
-    children: 'Text',
-    theme: ThemeButton.CLEAR,
+export const Clear: Story = {
+    args: {
+        ...Default.args,
+        theme: ButtonTheme.CLEAR,
+    },
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-    children: 'Text',
-    theme: ThemeButton.OUTLINE,
+export const OutlineSizeM: Story = {
+    args: {
+        ...Default.args,
+        theme: ButtonTheme.OUTLINE,
+        size: ButtonSize.M,
+    },
+};
+
+export const OutlineDisabled: Story = {
+    args: {
+        ...OutlineSizeM.args,
+        disabled: true,
+    },
+};
+
+export const Background: Story = {
+    args: {
+        ...Default.args,
+        theme: ButtonTheme.BACKGROUND,
+    },
+};
+
+export const BackgroundInverted: Story = {
+    args: {
+        ...Default.args,
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+    },
+};
+
+export const SquareSizeS: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        square: true,
+        size: ButtonSize.S,
+    },
+};
+
+export const SquareSizeM: Story = {
+    args: {
+        ...SquareSizeS.args,
+        size: ButtonSize.M,
+    },
+};
+
+export const SquareSizeL: Story = {
+    args: {
+        ...SquareSizeS.args,
+        size: ButtonSize.L,
+    },
+};
+
+export const SquareSizeXL: Story = {
+    args: {
+        ...SquareSizeS.args,
+        size: ButtonSize.XL,
+    },
 };
