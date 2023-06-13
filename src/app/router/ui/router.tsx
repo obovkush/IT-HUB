@@ -2,19 +2,19 @@ import {AboutPage} from 'pages/AboutPage';
 import {MainPage} from 'pages/MainPage';
 import {NotFoundPage} from 'pages/NotFoundPage';
 import {RouteProps} from 'react-router-dom';
-import {AppRoutes, RouthPath} from 'shared/config/routerConfig/routerConfig';
+import {AppRoutes, RoutePath} from 'shared/config/routerConfig/routerConfig';
 
 export const router: Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
-        path: RouthPath.main,
+        path: RoutePath.main,
         element: <MainPage />,
     },
     [AppRoutes.ABOUT]: {
-        path: RouthPath.about,
+        path: RoutePath.about,
         element: <AboutPage />,
     },
     [AppRoutes.NOT_FOUND]: {
-        path: RouthPath.not_found,
+        path: RoutePath.not_found,
         element: <NotFoundPage />,
     },
 };
