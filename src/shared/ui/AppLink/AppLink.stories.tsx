@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { AppLink, AppLinkTheme } from './AppLink';
 
 export default {
@@ -11,7 +10,6 @@ export default {
     args: {
         to: '/',
     },
-    decorators: [ThemeDecorator],
 } as Meta<typeof AppLink>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
