@@ -15,21 +15,21 @@ export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Default: Story = {
-    render: () => <LoginForm />,
+    render: () => <LoginForm onSuccess={() => true}/>,
 };
 Default.decorators = [StoreDecorator({loginForm: { username: '123', password: 'asd' }})];
 
 export const Dark: Story = {
-    render: () => <LoginForm />,
+    render: () => <LoginForm onSuccess={() => true}/>,
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({loginForm: { username: '123', password: 'asd' }})];
 
 export const WithError: Story = {
-    render: () => <LoginForm />,
+    render: () => <LoginForm onSuccess={() => false}/>,
 };
 WithError.decorators = [StoreDecorator({loginForm: { username: '123', password: 'asd', error: 'ERROR' }})];
 
 export const Loading: Story = {
-    render: () => <LoginForm />,
+    render: () => <LoginForm onSuccess={() => true}/>,
 };
 Loading.decorators = [StoreDecorator({loginForm: { isLoading: true }})];
