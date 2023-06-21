@@ -1,33 +1,32 @@
-/* eslint-disable no-unused-vars */
-import { classNames } from 'shared/lib/classNames/classNames';
+import {ButtonHTMLAttributes, FC, ReactNode, memo} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
-import {ButtonHTMLAttributes, FC} from "react";
-
 
 export enum ButtonTheme {
-    CLEAR = 'clear',
-    CLEAR_INVERTED = 'clearInverted',
-    OUTLINE = 'outline',
-    BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'backgroundInverted',
+	CLEAR = 'clear',
+	CLEAR_INVERTED = 'clearInverted',
+	OUTLINE = 'outline',
+	BACKGROUND = 'background',
+	BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
-    S = 'size_s',
-    M = 'size_m',
-    L = 'size_l',
-    XL = 'size_xl',
+	S = 'size_s',
+	M = 'size_m',
+	L = 'size_l',
+	XL = 'size_xl',
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-    className?: string;
-    theme?: ButtonTheme;
-    square?: boolean;
-    size?: ButtonSize;
-    disabled?: boolean;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	className?: string;
+	theme?: ButtonTheme;
+	square?: boolean;
+	size?: ButtonSize;
+	disabled?: boolean;
+	children?: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = memo((props) => {
     const {
         className,
         children,
@@ -47,14 +46,11 @@ export const Button: FC<ButtonProps> = (props) => {
 
     return (
         <button
-            type="button"
+            type='button'
             className={classNames(cls.Button, mods, [className])}
-            // eslint-disable-next-line react/jsx-props-no-spreading
             {...otherProps}
         >
             {children}
         </button>
     );
-};
-
-
+});
