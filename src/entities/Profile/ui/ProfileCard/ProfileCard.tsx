@@ -13,7 +13,7 @@ interface ProfileCardProps {
 	className?: string;
 }
 
-export const ProfileCard = ({className}: ProfileCardProps) => {
+export const ProfileCard = ({className = ''}: ProfileCardProps) => {
     const {t} = useTranslation('profile');
     const data = useSelector(getProfileData);
     const isLoading = useSelector(getProfileIsLoading);
@@ -30,7 +30,7 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
                 </Button>
             </div>
             <div className={cls.data}>
-                <Input value={data?.first} placeholder={t('Ваше имя')} className={cls.input} />
+                <Input value={data?.firstname} placeholder={t('Ваше имя')} className={cls.input} />
                 <Input value={data?.lastname} placeholder={t('Ваша фамилия')} className={cls.input} />
             </div>
         </div>

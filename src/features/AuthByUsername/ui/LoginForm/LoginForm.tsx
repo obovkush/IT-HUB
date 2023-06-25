@@ -27,7 +27,7 @@ const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
+const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const username = useSelector(getLoginUsername);
