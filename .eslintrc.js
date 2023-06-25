@@ -60,6 +60,7 @@ module.exports = {
         'react/display-name': 'off',
         'react/prop-types': 'off',
         'react/jsx-props-no-spreading': 'off',
+        "no-undef": 'off',
     },
     globals: {
         __IS_DEV__: true,
