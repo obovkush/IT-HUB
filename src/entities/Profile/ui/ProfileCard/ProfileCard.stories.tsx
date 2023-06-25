@@ -1,21 +1,20 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import ProfilePage from './ProfilePage';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import {Profile} from 'entities/Profile';
+import {Profile, ProfileCard} from 'entities/Profile';
 import {Country} from 'entities/Country';
 import {Currency} from 'entities/Currency';
+import avatar from 'shared/assets/tests/storybook.jpg';
 
-
-const meta: Meta<typeof ProfilePage> = {
-    title: 'pages/ProfilePage',
-    component: ProfilePage,
+const meta: Meta<typeof ProfileCard> = {
+    title: 'entities/ProfileCard',
+    component: ProfileCard,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ProfilePage>;
+type Story = StoryObj<typeof ProfileCard>;
 
 const data: Profile = {
     firstname: 'Oleg',
@@ -25,15 +24,30 @@ const data: Profile = {
     age: 42,
     currency: Currency.RUB,
     username: 'admin',
-    avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+    avatar,
 };
 
 export const Default: Story = {
-    render: () => <ProfilePage />,
+    args: {
+        data,
+    },
 };
-Default.decorators = [StoreDecorator({profile: {form: data, data}})];
 
 export const Dark: Story = {
-    render: () => <ProfilePage />,
+    args: {
+        data,
+    },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({profile: {form: data, data}})];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const WithError: Story = {
+    args: {
+        error: 'true',
+    }
+};
+
+export const Loading: Story = {
+    args: {
+        isLoading: true,
+    }
+};
