@@ -7,5 +7,12 @@
   "Введите имя пользователя": "Enter login",
   "Введите пароль": "Enter password",
   "Введите ссылку на аватар": "Enter avatar link",
-  "Город": "City"
+  "Город": "City",
+  "Данные не указаны": "No required data",
+  "Имя и фамилия обязательны": "Firstname and lastname required",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректный регион": "Incorrect region",
+  "Попробуйте обновить страницу": "Try to reload page",
+  "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
+  "Серверная ошибка при сохранении": "Server error on save"
 }
