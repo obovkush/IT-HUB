@@ -4,6 +4,7 @@ import {Theme} from 'app/providers/ThemeProvider';
 import {Profile, ProfileCard} from 'entities/Profile';
 import {Country} from 'entities/Country';
 import {Currency} from 'entities/Currency';
+import AvatarImg from './storybook.jpg';
 
 const meta: Meta<typeof ProfileCard> = {
     title: 'entities/ProfileCard',
@@ -22,7 +23,7 @@ const data: Profile = {
     age: 42,
     currency: Currency.RUB,
     username: 'admin',
-    avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+    avatar: AvatarImg,
 };
 
 export const Default: Story = {
