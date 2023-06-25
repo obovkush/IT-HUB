@@ -1,6 +1,11 @@
 {
   "Профиль": "Profile",
   "Редактировать": "Edit",
+  "Ваш возраст": "Your age",
   "Ваша фамилия": "Your lastname",
-  "Ваше имя": "Your name"
+  "Ваше имя": "Your firstname",
+  "Введите имя пользователя": "Enter login",
+  "Введите пароль": "Enter password",
+  "Введите ссылку на аватар": "Enter avatar link",
+  "Город": "City"
 }
