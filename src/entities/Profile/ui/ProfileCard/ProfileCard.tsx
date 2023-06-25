@@ -92,9 +92,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     readonly={readonly} />
                 <Input
                     value={data?.age}
-                    type='number'
-                    min={18}
-                    max={100}
                     placeholder={t('Ваш возраст')}
                     className={cls.input}
                     onChange={onChangeAge}
@@ -120,15 +117,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     readonly={readonly}
                 />
                 <CurrencySelect
-                    className={cls.input}
-                    value={data?.currency}
-                    onChange={onChangeCurrency}
-                    readonly={readonly} />
+                    className={cls.input} value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
                 <CountrySelect
-                    className={cls.input}
-                    value={data?.country}
-                    onChange={onChangeCountry}
-                    readonly={readonly} />
+                    className={cls.input} value={data?.country} onChange={onChangeCountry} readonly={readonly} />
             </div>
         </div>
     );
