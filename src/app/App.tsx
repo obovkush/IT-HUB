@@ -18,7 +18,7 @@ const App: React.FC = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar />
-            <div className="content-page" style={{color: 'yellow'}}>
+            <div className="content-page">
                 <Sidebar />
                 {inited && <AppRouter />}
             </div>
