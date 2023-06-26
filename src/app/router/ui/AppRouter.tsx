@@ -1,40 +1,32 @@
-import {Suspense, useMemo} from 'react';
+import {Suspense, memo, useCallback} from 'react';
 import {Route, Routes} from 'react-router-dom';
-import {router} from './router';
+import {AppRoutesProps, router} from './router';
 import {PageLoader} from 'shared/ui/PageLoader/PageLoader';
-import {useSelector} from 'react-redux';
-import {getUserAuthData} from 'entities/User';
+import {RequireAuth} from './RequireAuth';
 
 const AppRouter = () => {
-    const isAuth = useSelector(getUserAuthData);
-
-    const routes = useMemo(() => Object.values(router).filter((route) => {
-        if (route.authOnly && !isAuth) {
-            return false;
-        }
-
-        return true;
-    }), [isAuth]);
+    const renderWithWrapper = useCallback((route: AppRoutesProps) => {
+        const element = (
+            <Suspense fallback={<PageLoader />}>
+                <div className="page-wrapper">
+                    {route.element}
+                </div>
+            </Suspense>
+        );
+        return (
+            <Route
+                key={route.path}
+                path={route.path}
+                element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+            />
+        );
+    }, []);
 
     return (
-        <Suspense fallback={<p><i>Loading...</i></p>}>
-            <Routes>
-                {routes.map(({ element, path }) => (
-                    <Route
-                        key={path}
-                        path={path}
-                        element={(
-                            <Suspense fallback={<PageLoader />}>
-                                <div className="page-wrapper">
-                                    {element}
-                                </div>
-                            </Suspense>
-                        )}
-                    />
-                ))}
-            </Routes>
-        </Suspense>
+        <Routes>
+            {Object.values(router).map(renderWithWrapper)}
+        </Routes>
     );
 };
 
-export default AppRouter;
+export default memo(AppRouter);
