@@ -10,6 +10,7 @@ import {articlesPageActions, articlesPageReducer, getArticles} from '../../model
 import {getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView} from '../../model/selectors/articlesPageSelectors';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import {Page} from 'shared/ui/Page/Page';
 
 interface ArticlesPageProps {
 	className?: string;
@@ -41,10 +42,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticlesPage, {}, [className])}>
+            <Page className={classNames(cls.ArticlesPage, {}, [className])}>
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList isLoading={isLoading} view={view} articles={articles} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
