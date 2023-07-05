@@ -22,7 +22,7 @@ import {Country} from 'entities/Country';
 import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {Page} from 'shared/ui/Page/Page';
+import {Page} from 'widjets/Page/Page';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -40,7 +40,7 @@ const ProfilePage = ({className = ''}: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
-    const {id} = useParams<{ id: string }>();
+    const {id} = useParams<{id: string}>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
@@ -116,13 +116,12 @@ const ProfilePage = ({className = ''}: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
-                {validateErrors?.length && validateErrors.map((err) => (
+                {validateErrors?.length && validateErrors.map((err) =>
                     <Text
                         key={err}
                         theme={TextTheme.ERROR}
                         text={validateErrorTranslates[err]}
-                    />
-                ))}
+					    />)}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

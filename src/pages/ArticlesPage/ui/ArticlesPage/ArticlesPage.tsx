@@ -9,7 +9,7 @@ import {useSelector} from 'react-redux';
 import {articlesPageActions, articlesPageReducer, getArticles} from '../../model/slices/articlesPageSlice';
 import {getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView} from '../../model/selectors/articlesPageSelectors';
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {Page} from 'shared/ui/Page/Page';
+import {Page} from 'widjets/Page/Page';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 
@@ -46,10 +46,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page
-                onScrollEnd={onLoadNextPart}
-                className={classNames(cls.ArticlesPage, {}, [className])}
-            >
+            <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList isLoading={isLoading} view={view} articles={articles} />
             </Page>
