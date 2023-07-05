@@ -1,6 +1,5 @@
 import {CounterSchema} from 'entities/Counter';
 import {CombinedState} from 'redux';
-import {NavigateOptions, To} from 'react-router-dom';
 import {AxiosInstance} from 'axios';
 import {UserSchema} from 'entities/User';
 import {LoginSchema} from 'features/AuthByUsername';
