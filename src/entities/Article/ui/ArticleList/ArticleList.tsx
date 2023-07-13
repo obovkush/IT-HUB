@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {memo} from 'react';
+import {HTMLAttributeAnchorTarget, memo} from 'react';
 import {ArticleListItemSkeleton} from '../../ui/ArticleListItem/ArticleListItemSkeleton';
 import {ArticleListItem} from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
@@ -12,6 +12,7 @@ interface ArticleListProps {
 	articles: Article[];
 	isLoading?: boolean;
 	view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -20,7 +21,7 @@ const getSkeletons = (view: ArticleView) =>
         .map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />);
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const {className = '', articles, view = ArticleView.SMALL, isLoading} = props;
+    const {className = '', articles, view = ArticleView.SMALL, isLoading, target} = props;
     const {t} = useTranslation();
 
     if (isLoading) {
@@ -28,7 +29,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     const renderArticle = (article: Article) =>
-        <ArticleListItem article={article} view={view} className={cls.card} key={article.id} />;
+        <ArticleListItem article={article} view={view} className={cls.card} key={article.id} target={target}/>;
 
     if (!isLoading && !articles.length) {
         return (
