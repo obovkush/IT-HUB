@@ -43,5 +43,9 @@
   "Наука": "Science",
   "дате создания": "created date",
   "названию": "name",
-  "просмотрам": "views"
+  "просмотрам": "views",
+  "Редактирование статьи с ID = ": "Edit article with ID = ",
+  "Создание новой статьи": "Addind new article",
+  "Создать статью": "Add article",
+  "It HUB": "It HUB"
 }
