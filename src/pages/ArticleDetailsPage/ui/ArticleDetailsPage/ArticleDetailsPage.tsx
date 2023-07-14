@@ -1,11 +1,12 @@
-import {useTranslation} from 'react-i18next';
 import {memo, useCallback} from 'react';
-import {ArticleDetails, ArticleList} from 'entities/Article';
-import {useNavigate, useParams} from 'react-router-dom';
-import {Text, TextSize} from 'shared/ui/Text/Text';
-import {CommentList} from 'entities/Comment';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {useDispatch, useSelector} from 'react-redux';
+import {useParams} from 'react-router-dom';
+import {Page} from 'widjets/Page/Page';
+import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import {ArticleDetails, ArticleList} from 'entities/Article';
+import {CommentList} from 'entities/Comment';
+import {AddCommentForm} from 'features/addCommentForm';
+import {Text, TextSize} from 'shared/ui/Text/Text';
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {fetchCommentsByArticleId} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {
@@ -15,14 +16,12 @@ import {getArticleComments} from '../../model/slices/articleDetailsCommentsSlice
 import {getArticleCommentsIsLoading} from '../../model/selectors/comments';
 import {getArticleRecommendations} from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import {getArticleRecommendationsIsLoading} from '../../model/selectors/recommendations';
-import {AddCommentForm} from 'features/addCommentForm';
 import {addCommentForArticle} from '../../model/services/addCommentForArticle/addCommentForArticle';
-import {RoutePath} from 'shared/config/routerConfig/routerConfig';
-import {Button, ButtonTheme} from 'shared/ui/Button/Button';
-import {Page} from 'widjets/Page/Page';
+import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {articleDetailsPageReducer} from '../../model/slices';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
+import {useTranslation} from 'react-i18next';
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -41,11 +40,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-    const navigate = useNavigate();
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     const onSendComment = useCallback(
         (text: string) => {
@@ -66,9 +60,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size={TextSize.L}
