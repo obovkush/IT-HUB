@@ -1,11 +1,14 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
 import {memo, useCallback, useState} from 'react';
-import {Button, ButtonTheme} from 'shared/ui/Button/Button';
-import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
+import {Button, ButtonTheme} from 'shared/ui/Button/Button';
+import {AppLink, AppLinkTheme} from 'shared/ui/AppLink/AppLink';
+import {Text, TextTheme} from 'shared/ui/Text/Text';
+import {LoginModal} from 'features/AuthByUsername';
 import {getUserAuthData, userActions} from 'entities/User';
+import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
+import {useTranslation} from 'react-i18next';
+import { RoutePath } from 'shared/config/routerConfig/routerConfig';
 
 interface NavbarProps {
 	className?: string;
@@ -32,11 +35,11 @@ export const Navbar = memo(({className = ''}: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    className={cls.links}
-                    onClick={onLogout}
-                >
+                <Text className={cls.appName} title={t('It HUB')} theme={TextTheme.INVERTED} />
+                <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
+                    {t('Создать статью')}
+                </AppLink>
+                <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogout}>
                     {t('Выйти')}
                 </Button>
             </header>
@@ -45,11 +48,7 @@ export const Navbar = memo(({className = ''}: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button
-                theme={ButtonTheme.CLEAR_INVERTED}
-                className={cls.links}
-                onClick={onShowModal}
-            >
+            <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
                 {t('Войти')}
             </Button>
             <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
