@@ -8,7 +8,9 @@ import {getUserAuthData, userActions} from 'entities/User';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
-import { RoutePath } from 'shared/config/routerConfig/routerConfig';
+import {RoutePath} from 'shared/config/routerConfig/routerConfig';
+import {Dropdown} from 'shared/ui/Dropdown/Dropdown';
+import {Avatar} from 'shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
 	className?: string;
@@ -39,19 +41,40 @@ export const Navbar = memo(({className = ''}: NavbarProps) => {
                 <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
                     {t('Создать статью')}
                 </AppLink>
-                <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogout}>
-                    {t('Выйти')}
-                </Button>
+                <Dropdown
+                    direction='bottom left'
+                    className={cls.dropdown}
+                    items={[
+                        {
+                            content: t('Профиль'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: t('Выйти'),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                />
             </header>
         );
     }
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
+            <Button
+                theme={ButtonTheme.CLEAR_INVERTED}
+                className={cls.links}
+                onClick={onShowModal}
+            >
                 {t('Войти')}
             </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </header>
     );
 });
