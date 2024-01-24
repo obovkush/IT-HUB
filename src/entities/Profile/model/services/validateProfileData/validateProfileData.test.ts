@@ -1,4 +1,4 @@
-import { ValidateProfileError } from 'entities/Profile';
+import { ValidateProfileError } from '../../types/profile';
 import { validateProfileData } from './validateProfileData';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
