@@ -3,11 +3,7 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: [
-        'plugin:react/recommended',
-        'plugin:i18next/recommended',
-        'plugin:storybook/recommended',
-    ],
+    extends: ['plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -16,7 +12,12 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'import-module'],
+    settings: {
+        react: {
+            version: 'detect', // React version. "detect" automatically picks the version you have installed.
+        },
+    },
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -60,9 +61,10 @@ module.exports = {
         'react/display-name': 'off',
         'react/prop-types': 'off',
         'react/jsx-props-no-spreading': 'off',
-        "no-undef": 'off',
+        'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
+        'import-module/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
