@@ -1,6 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import {ArticleDetailsComments} from './ArticleDetailsComments';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticleDetailsComments> = {
     title: 'pages/ArticleDetailsPageHeader',
@@ -14,4 +15,4 @@ type Story = StoryObj<typeof ArticleDetailsComments>;
 export const Default: Story = {
     render: () => <ArticleDetailsComments id={'1'} />,
 };
-Default.args = {};
+Default.decorators = [StoreDecorator({})];
