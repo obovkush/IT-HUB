@@ -4,7 +4,7 @@ import {AxiosInstance} from 'axios';
 import {UserSchema} from 'entities/User';
 import {LoginSchema} from 'features/AuthByUsername';
 import {AnyAction, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
-import {ProfileSchema} from 'entities/Profile';
+import {ProfileSchema} from 'features/editableProfileCard';
 import {ArticleDetailsSchema} from 'entities/Article';
 import {AddCommentFormSchema} from 'features/addCommentForm';
 import {ArticlesPageSchema} from 'pages/ArticlesPage/model/types/articlesPageSchema';

@@ -1,16 +1,16 @@
-import { ValidateProfileError } from '../../types/profile';
-import { validateProfileData } from './validateProfileData';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { validateProfileData } from './validateProfileData';
 
 const data = {
-    firstname: 'Oleg',
-    lastname: 'Bovkush',
-    country: Country.Russia,
-    city: 'Moscow',
-    age: 42,
-    currency: Currency.RUB,
     username: 'admin',
+    age: 22,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
+    currency: Currency.USD,
 };
 
 describe('validateProfileData.test', () => {

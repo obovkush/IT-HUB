@@ -1,17 +1,18 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { updateProfileData } from './updateProfileData';
 
 const data = {
-    firstname: 'Oleg',
-    lastname: 'Bovkush',
-    country: Country.Russia,
-    city: 'Moscow',
-    age: 42,
-    currency: Currency.RUB,
     username: 'admin',
+    age: 22,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
+    currency: Currency.USD,
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {
