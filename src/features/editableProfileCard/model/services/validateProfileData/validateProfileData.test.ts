@@ -5,12 +5,12 @@ import { validateProfileData } from './validateProfileData';
 
 const data = {
     username: 'admin',
-    age: 22,
-    country: Country.Ukraine,
-    lastname: 'ulbi tv',
-    first: 'asd',
-    city: 'asf',
-    currency: Currency.USD,
+    age: 45,
+    country: Country.Russia,
+    lastname: 'Bovkush',
+    firstname: 'Oleg',
+    city: 'Moscow',
+    currency: Currency.RUB,
 };
 
 describe('validateProfileData.test', () => {
