@@ -1,4 +1,6 @@
+import {UserRole} from 'entities/User/model/types/user';
 import {AboutPage} from 'pages/AboutPage';
+import {AdminPanelPage} from 'pages/AdminPanelPage';
 import {ArticleDetailsPage} from 'pages/ArticleDetailsPage';
 import {ArticleEditPage} from 'pages/ArticleEditPage';
 import {ArticlesPage} from 'pages/ArticlesPage';
@@ -10,6 +12,7 @@ import {AppRoutes, RoutePath} from 'shared/config/routerConfig/routerConfig';
 
 export type AppRoutesProps = RouteProps & {
 	authOnly?: boolean;
+    roles?: UserRole[];
 };
 
 export const router: Record<AppRoutes, AppRoutesProps> = {
@@ -45,6 +48,12 @@ export const router: Record<AppRoutes, AppRoutesProps> = {
         path: `${RoutePath.article_edit}`,
         element: <ArticleEditPage />,
         authOnly: true,
+    },
+    [AppRoutes.ADMIN_PANEL]: {
+        path: `${RoutePath.admin_panel}`,
+        element: <AdminPanelPage />,
+        authOnly: true,
+        roles: [UserRole.MANAGER, UserRole.ADMIN],
     },
     // last
     [AppRoutes.NOT_FOUND]: {
