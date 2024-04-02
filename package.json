@@ -35,6 +35,8 @@
   "homepage": "https://github.com/obovkush/project#readme",
   "devDependencies": {
     "@babel/core": "^7.22.1",
+    "@babel/plugin-transform-runtime": "^7.24.3",
+    "@babel/plugin-transform-typescript": "^7.24.1",
     "@babel/preset-env": "^7.22.2",
     "@babel/preset-typescript": "^7.21.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
@@ -75,6 +77,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.12",
     "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.5.1",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
