@@ -1,4 +1,4 @@
-import {UserRole} from 'entities/User/model/types/user';
+import {UserRole} from 'entities/User/model/consts/userConsts';
 import {AboutPage} from 'pages/AboutPage';
 import {AdminPanelPage} from 'pages/AdminPanelPage';
 import {ArticleDetailsPage} from 'pages/ArticleDetailsPage';
@@ -13,7 +13,7 @@ import {AppRoutes, RoutePath} from 'shared/config/routerConfig/routerConfig';
 
 export type AppRoutesProps = RouteProps & {
 	authOnly?: boolean;
-    roles?: UserRole[];
+	roles?: UserRole[];
 };
 
 export const router: Record<AppRoutes, AppRoutesProps> = {
