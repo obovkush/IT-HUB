@@ -1,17 +1,18 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react';
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import {EditableProfileCardHeader} from './EditableProfileCardHeader';
 
-import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
-export default {
-    title: 'features/editableProfileCard/EditableProfileCardHeader',
+const meta: Meta<typeof EditableProfileCardHeader> = {
+    title: 'features/EditableProfileCard/EditableProfileCardHeader',
     component: EditableProfileCardHeader,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof EditableProfileCardHeader>;
+};
 
-const Template: ComponentStory<typeof EditableProfileCardHeader> = (args) => <EditableProfileCardHeader {...args} />;
+export default meta;
 
-export const Normal = Template.bind({});
-Normal.args = {};
+type Story = StoryObj<typeof EditableProfileCardHeader>;
+
+export const Default: Story = {
+    render: () => <EditableProfileCardHeader />,
+};
+Default.decorators = [StoreDecorator({})];

@@ -4,7 +4,7 @@ import {Loader} from './Loader';
 
 
 const meta: Meta<typeof Loader> = {
-    title: 'widjet/Loader',
+    title: 'shared/Loader',
     component: Loader,
 };
 

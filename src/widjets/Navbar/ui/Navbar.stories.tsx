@@ -6,7 +6,7 @@ import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecora
 import {Theme} from 'app/providers/ThemeProvider';
 
 const meta: Meta<typeof Navbar> = {
-    title: 'widjet/Navbar',
+    title: 'widjets/Navbar',
     component: Navbar,
 };
 
