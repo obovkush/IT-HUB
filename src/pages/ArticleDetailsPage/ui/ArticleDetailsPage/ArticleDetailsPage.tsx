@@ -1,16 +1,16 @@
 import {memo} from 'react';
 import {useParams} from 'react-router-dom';
-import {Page} from 'widjets/Page/Page';
+import {Page} from '@/widjets/Page/Page';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import {ArticleDetails} from 'entities/Article';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {ArticleDetails} from '@/entities/Article';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {articleDetailsPageReducer} from '../../model/slices';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import {useTranslation} from 'react-i18next';
-import {VStack} from 'shared/ui/Stack';
+import {VStack} from '@/shared/ui/Stack';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
-import {ArticleRecommendationsList} from 'features/articleRecommendationsList';
+import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
 
 interface ArticleDetailsPageProps {
 	className?: string;

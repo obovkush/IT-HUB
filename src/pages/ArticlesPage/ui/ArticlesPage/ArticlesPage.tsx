@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
 import {memo, useCallback} from 'react';
 import {useSearchParams} from 'react-router-dom';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesPage.module.scss';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {articlesPageReducer} from '../../model/slices/articlesPageSlice';
-import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {Page} from 'widjets/Page/Page';
+import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import {Page} from '@/widjets/Page/Page';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 import {ArticlesPageFilters} from '../ArticlesPageFilters/ArticlesPageFilters';
