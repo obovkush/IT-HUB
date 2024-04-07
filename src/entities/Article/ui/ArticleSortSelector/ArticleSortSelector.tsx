@@ -66,7 +66,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select options={sortFieldOptions} label={t('Сортировать ПО')} value={sort} onChange={changeSortHandler} />
+            <Select options={sortFieldOptions} label={t('Сортировать по')} value={sort} onChange={changeSortHandler} />
             <Select
                 options={orderOptions}
                 label={t('по')}
