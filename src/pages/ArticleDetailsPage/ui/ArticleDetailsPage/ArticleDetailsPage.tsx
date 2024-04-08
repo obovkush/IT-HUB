@@ -1,6 +1,6 @@
 import {memo} from 'react';
 import {useParams} from 'react-router-dom';
-import {Page} from '@/widjets/Page/Page';
+import {Page} from '@/widjets/Page';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {ArticleDetails} from '@/entities/Article';
 import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
