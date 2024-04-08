@@ -1,7 +1,7 @@
 import {Suspense, memo, useCallback} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import {AppRoutesProps, router} from './router';
-import {PageLoader} from '@/widjets/PageLoader/PageLoader';
+import {PageLoader} from '@/widjets/PageLoader';
 import {RequireAuth} from './RequireAuth';
 
 const AppRouter = () => {
