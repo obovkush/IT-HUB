@@ -9,14 +9,15 @@ import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {Button, ButtonTheme} from '@/shared/ui/Button';
 import {Input} from '@/shared/ui/Input';
 import {HStack} from '@/shared/ui/Stack';
+import {Text, TextTheme} from '@/shared/ui/Text';
 
 import cls from './AddCommentForm.module.scss';
 import {getAddCommentFormError, getAddCommentFormText} from '../../model/selectors/addCommentFormSelectors';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slices/addCommentFormSlice';
 
 export interface AddCommentFormProps {
-	className?: string;
-	onSendComment: (text: string) => void;
+    className?: string;
+    onSendComment: (text: string) => void;
 }
 
 const reducers: ReducersList = {
@@ -44,19 +45,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack justify="between" max className={classNames(cls.AddCommentForm, {}, [className])}>
-                <Input
-                    className={cls.input}
-                    placeholder={t('Введите текст комментария')}
-                    value={text}
-                    onChange={onCommentTextChange}
-                />
-                <Button
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onSendHandler}
-                >
+            <HStack justify='between' max className={classNames(cls.AddCommentForm, {}, [className])}>
+                <Input className={cls.input} placeholder={t('Введите текст комментария')} value={text} onChange={onCommentTextChange} />
+                <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
                     {t('Отправить')}
                 </Button>
+                {error && <Text text={t('Ошибка при сохранении комментария')} theme={TextTheme.ERROR} />}
             </HStack>
         </DynamicModuleLoader>
     );

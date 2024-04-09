@@ -38,8 +38,6 @@ export const Input = memo((props: InputProps) => {
         }
     }, [autofocus]);
 
-    const isCaretVisible = isFocused && !readonly;
-
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
         setCaretPosition(e.target.value.length);
