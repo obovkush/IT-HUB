@@ -5,7 +5,7 @@ import {Route, Routes} from 'react-router-dom';
 import {AppRoutesProps} from '@/shared/types/router';
 import {PageLoader} from '@/widjets/PageLoader';
 
-import {router} from './config/routerConfig';
+import {routeConfig} from './config/routerConfig';
 import {RequireAuth} from './RequireAuth';
 
 
@@ -17,7 +17,7 @@ const AppRouter = () => {
         );
     }, []);
 
-    return <Routes>{Object.values(router).map(renderWithWrapper)}</Routes>;
+    return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 };
 
 export default memo(AppRouter);
