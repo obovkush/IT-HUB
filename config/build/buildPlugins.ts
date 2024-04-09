@@ -44,6 +44,7 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
         plugins.push(
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
+                analyzerPort: 4444,
             })
         );
     }
