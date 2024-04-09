@@ -89,6 +89,8 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
+        'array-bracket-spacing': ['error', 'never'],
+        'object-curly-spacing': ["error", "never"],
         'import-module/path-checker': ['error', {alias: '@'}],
         'import-module/public-api-imports': [
             'error',
