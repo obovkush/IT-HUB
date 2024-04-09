@@ -8,7 +8,7 @@ import {getUserAuthData} from '@/entities/User';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
-import {RoutePath} from '@/shared/config/routerConfig/routerConfig';
+import {RoutePath} from '@/shared/const/router';
 import {HStack} from '@/shared/ui/Stack';
 import {NotificationButton} from '@/features/notificationButton';
 import {AvatarDropdown} from '@/features/avatarDropdown';

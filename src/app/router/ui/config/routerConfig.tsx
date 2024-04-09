@@ -8,13 +8,8 @@ import {ForbiddenPage} from '@/pages/ForbiddenPage';
 import {MainPage} from '@/pages/MainPage';
 import {NotFoundPage} from '@/pages/NotFoundPage';
 import {ProfilePage} from '@/pages/ProfilePage';
-import {RouteProps} from 'react-router-dom';
-import {AppRoutes, RoutePath} from '@/shared/config/routerConfig/routerConfig';
-
-export type AppRoutesProps = RouteProps & {
-	authOnly?: boolean;
-	roles?: UserRole[];
-};
+import {AppRoutes, RoutePath} from '@/shared/const/router';
+import {AppRoutesProps} from '@/shared/types/router';
 
 export const router: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {

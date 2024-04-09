@@ -7,7 +7,7 @@ import {Card} from '@/shared/ui/Card/Card';
 import {Avatar} from '@/shared/ui/Avatar/Avatar';
 import {Button, ButtonTheme} from '@/shared/ui/Button/Button';
 import {useNavigate} from 'react-router-dom';
-import {RoutePath} from '@/shared/config/routerConfig/routerConfig';
+import {RoutePath} from '@/shared/const/router';
 import {Article, ArticleTextBlock} from '../../model/types/article';
 import {ArticleBlockType, ArticleView} from '../../model/consts/articleConsts';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -16,10 +16,10 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
-	className?: string;
-	article: Article;
-	view: ArticleView;
-	target?: HTMLAttributeAnchorTarget;
+    className?: string;
+    article: Article;
+    view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
