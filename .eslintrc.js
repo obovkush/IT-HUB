@@ -82,6 +82,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'react/self-closing-comp': ["error", {"component": true, "html": true}], // Checks closing html elements
         'no-param-reassign': 'off',
         'react/display-name': 'off',
         'react/prop-types': 'off',
