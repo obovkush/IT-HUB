@@ -27,7 +27,7 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
         }),
         new CopyPlugin({
             patterns: [
-                { from: paths.locales, to: paths.buildLocales },
+                {from: paths.locales, to: paths.buildLocales},
             ],
         }),
         new CircularDependencyPlugin({

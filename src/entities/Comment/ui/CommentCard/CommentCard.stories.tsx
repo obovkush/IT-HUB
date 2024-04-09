@@ -16,7 +16,7 @@ export const Default: Story = {args: {
     comment: {
         id: '1',
         text: 'hello world',
-        user: { id: '1', username: 'Vasya' },
+        user: {id: '1', username: 'Vasya'},
     },
 }};
 
@@ -24,7 +24,7 @@ export const Loading: Story = {args: {
     comment: {
         id: '1',
         text: 'hello world',
-        user: { id: '1', username: 'Vasya' },
+        user: {id: '1', username: 'Vasya'},
     },
     isLoading: true,
 }};

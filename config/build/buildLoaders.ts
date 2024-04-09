@@ -1,18 +1,18 @@
-import { RuleSetRule } from 'webpack';
+import {RuleSetRule} from 'webpack';
 
-import { buildBabelLoader } from './loaders/buildBabelLoader';
-import { buildCssLoader } from './loaders/buildCssLoader';
-import { BuildOptions } from './types/config';
+import {buildBabelLoader} from './loaders/buildBabelLoader';
+import {buildCssLoader} from './loaders/buildCssLoader';
+import {BuildOptions} from './types/config';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
-    const { isDev } = options;
+    const {isDev} = options;
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack']
     }
 
-    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
-    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
+    const codeBabelLoader = buildBabelLoader({...options, isTsx: false});
+    const tsxCodeBabelLoader = buildBabelLoader({...options, isTsx: true});
 
     const cssLoader = buildCssLoader(isDev);
 

@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
-import { ListBox } from './ListBox';
+import {ListBox} from './ListBox';
 
 export default {
     title: 'shared/ListBox',
     component: ListBox,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        backgroundColor: {control: 'color'},
     },
     decorators: [
-        (Story) => <div style={{ padding: 100 }}><Story /></div>,
+        (Story) => <div style={{padding: 100}}><Story /></div>,
     ],
 } as ComponentMeta<typeof ListBox>;
 
@@ -21,8 +21,8 @@ export const Normal = Template.bind({});
 Normal.args = {
     value: '123',
     items: [
-        { content: '1asfasfasf23', value: '123' },
-        { content: '1asfasfasf21233', value: '1232' },
+        {content: '1asfasfasf23', value: '123'},
+        {content: '1asfasfasf21233', value: '1232'},
     ],
 };
 
@@ -31,8 +31,8 @@ topLeft.args = {
     direction: 'top left',
     value: '123',
     items: [
-        { content: '1asfasfasf23', value: '123' },
-        { content: '1asfasfasf21233', value: '1232' },
+        {content: '1asfasfasf23', value: '123'},
+        {content: '1asfasfasf21233', value: '1232'},
     ],
 };
 
@@ -41,8 +41,8 @@ topRight.args = {
     direction: 'top right',
     value: '123',
     items: [
-        { content: '1asfasfasf23', value: '123' },
-        { content: '1asfasfasf21233', value: '1232' },
+        {content: '1asfasfasf23', value: '123'},
+        {content: '1asfasfasf21233', value: '1232'},
     ],
 };
 
@@ -51,8 +51,8 @@ bottomLeft.args = {
     direction: 'bottom left',
     value: '123',
     items: [
-        { content: '1asfasfasf23', value: '123' },
-        { content: '1asfasfasf21233', value: '1232' },
+        {content: '1asfasfasf23', value: '123'},
+        {content: '1asfasfasf21233', value: '1232'},
     ],
 };
 
@@ -61,7 +61,7 @@ bottomRight.args = {
     direction: 'bottom right',
     value: '123',
     items: [
-        { content: '1asfasfasf23', value: '123' },
-        { content: '1asfasfasf21233', value: '1232' },
+        {content: '1asfasfasf23', value: '123'},
+        {content: '1asfasfasf21233', value: '1232'},
     ],
 };

@@ -1,12 +1,12 @@
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { AppLink, AppLinkTheme } from './AppLink';
+import {AppLink, AppLinkTheme} from './AppLink';
 
 export default {
     title: 'shared/AppLink',
     component: AppLink,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        backgroundColor: {control: 'color'},
     },
     args: {
         to: '/',

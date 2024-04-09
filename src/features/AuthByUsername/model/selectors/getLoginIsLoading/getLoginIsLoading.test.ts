@@ -1,6 +1,6 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 
-import { getLoginIsLoading } from './getLoginIsLoading';
+import {getLoginIsLoading} from './getLoginIsLoading';
 
 describe('getLoginIsLoading.test', () => {
     test('should return true', () => {

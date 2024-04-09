@@ -1,9 +1,9 @@
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { updateProfileData } from './updateProfileData';
-import { ValidateProfileError } from '../../../model/consts/consts';
+import {updateProfileData} from './updateProfileData';
+import {ValidateProfileError} from '../../../model/consts/consts';
 
 
 const data = {
@@ -25,7 +25,7 @@ describe('updateProfileData.test', () => {
             },
         });
 
-        thunk.api.put.mockReturnValue(Promise.resolve({ data }));
+        thunk.api.put.mockReturnValue(Promise.resolve({data}));
 
         const result = await thunk.callThunk();
 
@@ -40,7 +40,7 @@ describe('updateProfileData.test', () => {
                 form: data,
             },
         });
-        thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
+        thunk.api.put.mockReturnValue(Promise.resolve({status: 403}));
 
         const result = await thunk.callThunk();
 
@@ -53,7 +53,7 @@ describe('updateProfileData.test', () => {
     test('validate error', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, {
             profile: {
-                form: { ...data, lastname: '' },
+                form: {...data, lastname: ''},
             },
         });
         const result = await thunk.callThunk();

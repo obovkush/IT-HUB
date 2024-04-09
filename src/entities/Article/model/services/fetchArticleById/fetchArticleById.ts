@@ -1,8 +1,8 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import {createAsyncThunk} from '@reduxjs/toolkit';
 
-import { ThunkConfig } from '@/app/providers/StoreProvider';
+import {ThunkConfig} from '@/app/providers/StoreProvider';
 
-import { Article } from '../../types/article';
+import {Article} from '../../types/article';
 
 export const fetchArticleById = createAsyncThunk<
     Article,
@@ -11,7 +11,7 @@ export const fetchArticleById = createAsyncThunk<
     >(
         'articleDetails/fetchArticleById',
         async (articleId, thunkApi) => {
-            const { extra, rejectWithValue } = thunkApi;
+            const {extra, rejectWithValue} = thunkApi;
 
             try {
                 if (!articleId) {

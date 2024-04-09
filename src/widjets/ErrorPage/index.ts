@@ -1,4 +1,4 @@
-import { ErrorPage } from './ui/ErrorPage';
+import {ErrorPage} from './ui/ErrorPage';
 
 export {
     ErrorPage,

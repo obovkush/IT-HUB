@@ -1,6 +1,6 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import {StateSchema} from '@/app/providers/StoreProvider';
 
-import { getProfileIsLoading } from './getProfileIsLoading';
+import {getProfileIsLoading} from './getProfileIsLoading';
 
 describe('getProfileIsLoading.test', () => {
     test('should work with filled state', () => {

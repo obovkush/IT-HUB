@@ -1,10 +1,10 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import { Profile } from '@/entities/Profile';
+import {Profile} from '@/entities/Profile';
 
-import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
-import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { ProfileSchema } from '../types/editableProfileCardSchema';
+import {fetchProfileData} from '../services/fetchProfileData/fetchProfileData';
+import {updateProfileData} from '../services/updateProfileData/updateProfileData';
+import {ProfileSchema} from '../types/editableProfileCardSchema';
 
 const initialState: ProfileSchema = {
     readonly: true,
@@ -72,5 +72,5 @@ export const profileSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { actions: profileActions } = profileSlice;
-export const { reducer: profileReducer } = profileSlice;
+export const {actions: profileActions} = profileSlice;
+export const {reducer: profileReducer} = profileSlice;

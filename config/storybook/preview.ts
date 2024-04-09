@@ -40,8 +40,8 @@ const preview: Preview = {
             toolbar: {
                 icon: 'globe',
                 items: [
-                    { value: 'en', title: 'English' },
-                    { value: 'ru', title: 'Русский' },
+                    {value: 'en', title: 'English'},
+                    {value: 'ru', title: 'Русский'},
                 ],
                 showName: true,
             },

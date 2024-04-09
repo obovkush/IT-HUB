@@ -1,10 +1,10 @@
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
 
-import { profileActions, profileReducer } from './profileSlice';
-import { ValidateProfileError } from '../consts/consts';
-import { updateProfileData } from '../services/updateProfileData/updateProfileData';
-import { ProfileSchema } from '../types/editableProfileCardSchema';
+import {profileActions, profileReducer} from './profileSlice';
+import {ValidateProfileError} from '../consts/consts';
+import {updateProfileData} from '../services/updateProfileData/updateProfileData';
+import {ProfileSchema} from '../types/editableProfileCardSchema';
 
 const data = {
     username: 'admin',
@@ -18,15 +18,15 @@ const data = {
 
 describe('profileSlice.test', () => {
     test('test set readonly', () => {
-        const state: DeepPartial<ProfileSchema> = { readonly: false };
+        const state: DeepPartial<ProfileSchema> = {readonly: false};
         expect(profileReducer(
             state as ProfileSchema,
             profileActions.setReadonly(true),
-        )).toEqual({ readonly: true });
+        )).toEqual({readonly: true});
     });
 
     test('test cancel edit', () => {
-        const state: DeepPartial<ProfileSchema> = { data, form: { username: '' } };
+        const state: DeepPartial<ProfileSchema> = {data, form: {username: ''}};
 
         expect(profileReducer(
             state as ProfileSchema,
@@ -40,7 +40,7 @@ describe('profileSlice.test', () => {
     });
 
     test('test update profile', () => {
-        const state: DeepPartial<ProfileSchema> = { form: { username: '123' } };
+        const state: DeepPartial<ProfileSchema> = {form: {username: '123'}};
 
         expect(profileReducer(
             state as ProfileSchema,
@@ -48,7 +48,7 @@ describe('profileSlice.test', () => {
                 username: '123456',
             }),
         )).toEqual({
-            form: { username: '123456' },
+            form: {username: '123456'},
         });
     });
 
