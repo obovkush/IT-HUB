@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
+import {Theme} from '@/shared/const/theme';
 import {ProfileCard} from './ProfileCard';
 import {Country} from '@/entities/Country';
 import {Currency} from '@/entities/Currency';
@@ -41,11 +41,11 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const WithError: Story = {
     args: {
         error: 'true',
-    }
+    },
 };
 
 export const Loading: Story = {
     args: {
         isLoading: true,
-    }
+    },
 };

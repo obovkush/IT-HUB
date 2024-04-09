@@ -1,11 +1,11 @@
 import {AppRouter} from './router';
-import {useTheme} from './providers/ThemeProvider';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Navbar} from '@/widjets/Navbar';
 import {Sidebar} from '@/widjets/Sidebar';
 import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
 import {getUserInited, userActions} from '@/entities/User';
+import {useTheme} from '@/shared/lib/hooks/useTheme/useTheme';
 
 const App: React.FC = () => {
     const {theme} = useTheme();
@@ -18,7 +18,7 @@ const App: React.FC = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar />
-            <div className="content-page">
+            <div className='content-page'>
                 <Sidebar />
                 {inited && <AppRouter />}
             </div>

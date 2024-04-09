@@ -1,6 +1,8 @@
 import {StoryFn} from '@storybook/react';
-import {Theme, ThemeProvider} from '@/app/providers/ThemeProvider';
+// eslint-disable-next-line import-module/layer-imports
+import {ThemeProvider} from '@/app/providers/ThemeProvider';
 import {classNames} from '@/shared/lib/classNames/classNames';
+import {Theme} from '@/shared/const/theme';
 
 export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) => {
     return (
@@ -9,6 +11,5 @@ export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) => {
                 <Story />
             </div>
         </ThemeProvider>
-    )
+    );
 };
-
