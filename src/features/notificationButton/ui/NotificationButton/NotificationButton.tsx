@@ -8,7 +8,6 @@ import {Drawer} from '@/shared/ui/Drawer';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './NotificationButton.module.scss';
 import {useDevice} from '@/shared/lib/hooks/useDevice/useDevice';
-import {AnimationProvider} from '@/shared/lib/components/AnimationProvider';
 
 interface NotificationButtonProps {
 	className?: string;
