@@ -88,9 +88,9 @@ module.exports = {
         'react/jsx-props-no-spreading': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'arrow-body-style': 'off',
+        'arrow-body-style': ['error', 'as-needed'],
         'array-bracket-spacing': ['error', 'never'],
-        'object-curly-spacing': ["error", "never"],
+        'object-curly-spacing': ['error', 'never'],
         'import-module/path-checker': ['error', {alias: '@'}],
         'import-module/public-api-imports': [
             'error',
