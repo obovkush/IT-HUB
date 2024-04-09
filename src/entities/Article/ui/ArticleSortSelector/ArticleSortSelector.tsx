@@ -21,7 +21,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     const {className = '', onChangeOrder, onChangeSort, order, sort} = props;
     const {t} = useTranslation();
 
-    const orderOptions = useMemo<SelectOption[]>(
+    const orderOptions = useMemo<SelectOption<SortOrder>[]>(
         () => [
             {
                 value: 'asc',
@@ -35,7 +35,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         [t]
     );
 
-    const sortFieldOptions = useMemo<SelectOption[]>(
+    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
         () => [
             {
                 value: ArticleSortField.CREATED,
@@ -69,8 +69,8 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select options={sortFieldOptions} label={t('Сортировать по')} value={sort} onChange={changeSortHandler} />
-            <Select
+            <Select<ArticleSortField> options={sortFieldOptions} label={t('Сортировать по')} value={sort} onChange={changeSortHandler} />
+            <Select<SortOrder>
                 options={orderOptions}
                 label={t('по')}
                 value={order}
