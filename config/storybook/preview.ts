@@ -16,6 +16,7 @@ const preview: Preview = {
                 date: /Date$/,
             },
         },
+        layout: 'fullscreen',
     },
     decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator, SuspenseDecorator],
 
