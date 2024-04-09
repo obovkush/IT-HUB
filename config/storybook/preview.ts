@@ -1,11 +1,10 @@
+import {withThemeByClassName} from '@storybook/addon-themes';
 import {Preview} from '@storybook/react';
 
 import {RouterDecorator} from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import {StyleDecorator} from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import {SuspenseDecorator} from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
-import {ThemeDecorator} from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {Theme} from '../../src/shared/const/theme';
-
 
 const preview: Preview = {
     parameters: {
@@ -18,7 +17,19 @@ const preview: Preview = {
         },
         layout: 'fullscreen',
     },
-    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator, SuspenseDecorator],
+    decorators: [
+        StyleDecorator,
+        withThemeByClassName({
+            themes: {
+                light: `app ${Theme.LIGHT}`,
+                dark: `app ${Theme.DARK}`,
+                orange: `app ${Theme.ORANGE}`,
+            },
+            defaultTheme: 'light',
+        }),
+        RouterDecorator,
+        SuspenseDecorator,
+    ],
 
     globalTypes: {
         theme: {
@@ -30,6 +41,7 @@ const preview: Preview = {
                 items: [
                     {value: 'light', title: 'light'},
                     {value: 'dark', title: 'dark'},
+                    {value: 'orange', title: 'orange'},
                 ],
                 showName: true,
                 dynamicTitle: true,
