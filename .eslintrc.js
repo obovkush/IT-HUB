@@ -12,7 +12,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'import', 'import-module', 'unused-imports'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'import', 'import-module', 'unused-imports', 'autofix'],
     settings: {
         react: {
             version: 'detect', // React version. "detect" automatically picks the version you have installed.
@@ -55,7 +55,15 @@ module.exports = {
             },
         ],
         'unused-imports/no-unused-imports': 'error',
-        'no-unused-vars': 'off',
+        'no-unused-vars': 'error',
+        'autofix/no-unused-vars': [
+            'error',
+            {
+                argsIgnorePattern: '^_',
+                ignoreRestSiblings: true,
+                destructuredArrayIgnorePattern: '^_',
+            },
+        ],
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -82,7 +90,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
-        'react/self-closing-comp': ["error", {"component": true, "html": true}], // Checks closing html elements
+        'react/self-closing-comp': ['error', {component: true, html: true}], // Checks closing html elements
         'no-param-reassign': 'off',
         'react/display-name': 'off',
         'react/prop-types': 'off',
