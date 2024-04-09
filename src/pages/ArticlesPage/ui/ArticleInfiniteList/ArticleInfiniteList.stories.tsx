@@ -1,7 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import {ArticleInfiniteList} from './ArticleInfiniteList';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import {ArticleInfiniteList} from './ArticleInfiniteList';
 
 const meta: Meta<typeof ArticleInfiniteList> = {
     title: 'pages/ArticlesPage/ArticleInfiniteList',

@@ -1,17 +1,22 @@
 import {memo} from 'react';
-import {useParams} from 'react-router-dom';
-import {Page} from '@/widjets/Page';
-import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import {ArticleDetails} from '@/entities/Article';
-import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {articleDetailsPageReducer} from '../../model/slices';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import cls from './ArticleDetailsPage.module.scss';
+
 import {useTranslation} from 'react-i18next';
-import {VStack} from '@/shared/ui/Stack';
-import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
-import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
+import {useParams} from 'react-router-dom';
+
+import {ArticleDetails} from '@/entities/Article';
 import {ArticleRating} from '@/features/articleRating';
+import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {VStack} from '@/shared/ui/Stack';
+import {Page} from '@/widjets/Page';
+
+
+import cls from './ArticleDetailsPage.module.scss';
+import {articleDetailsPageReducer} from '../../model/slices';
+import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
+import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+
 
 interface ArticleDetailsPageProps {
 	className?: string;

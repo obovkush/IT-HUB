@@ -1,7 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import {ErrorPage} from './ErrorPage';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import {ErrorPage} from './ErrorPage';
 
 const meta: Meta<typeof ErrorPage> = {
     title: 'pages/ErrorPage',

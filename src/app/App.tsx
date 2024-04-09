@@ -1,11 +1,15 @@
-import {AppRouter} from './router';
+import {useEffect} from 'react';
+
+import {useDispatch, useSelector} from 'react-redux';
+
+import {getUserInited, userActions} from '@/entities/User';
 import {classNames} from '@/shared/lib/classNames/classNames';
+import {useTheme} from '@/shared/lib/hooks/useTheme/useTheme';
 import {Navbar} from '@/widjets/Navbar';
 import {Sidebar} from '@/widjets/Sidebar';
-import {useDispatch, useSelector} from 'react-redux';
-import {useEffect} from 'react';
-import {getUserInited, userActions} from '@/entities/User';
-import {useTheme} from '@/shared/lib/hooks/useTheme/useTheme';
+
+
+import {AppRouter} from './router';
 
 const App: React.FC = () => {
     const {theme} = useTheme();

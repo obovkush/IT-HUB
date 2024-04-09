@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+
 import { AppLink, AppLinkTheme } from './AppLink';
 
 export default {
