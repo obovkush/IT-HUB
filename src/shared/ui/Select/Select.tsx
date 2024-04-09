@@ -1,7 +1,7 @@
 import {ChangeEvent, useMemo} from 'react';
 
-import {typedMemo} from '@/shared/lib/typedMemo/typedMemo';
 import {classNames, Mods} from '@/shared/lib/classNames/classNames';
+import {typedMemo} from '@/shared/lib/typedMemo/typedMemo';
 
 import cls from './Select.module.scss';
 
