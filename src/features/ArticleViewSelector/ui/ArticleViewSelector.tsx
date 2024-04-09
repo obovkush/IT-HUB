@@ -7,12 +7,12 @@ import {Button, ButtonTheme} from '@/shared/ui/Button';
 import {Icon} from '@/shared/ui/Icon';
 
 import cls from './ArticleViewSelector.module.scss';
-import {ArticleView} from '../../model/consts/articleConsts';
+import {ArticleView} from '../../../entities/Article/model/consts/articleConsts';
 
 interface ArticleViewSelectorProps {
-	className?: string;
-	view: ArticleView;
-	onViewClick?: (view: ArticleView) => void;
+    className?: string;
+    view: ArticleView;
+    onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -37,10 +37,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
         <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
             {viewTypes.map((viewType) => (
                 <Button key={viewType.view} theme={ButtonTheme.CLEAR} onClick={onClick(viewType.view)}>
-                    <Icon
-                        Svg={viewType.icon}
-                        className={classNames(className, {[cls.notSelected]: viewType.view !== view}, [])}
-                    />
+                    <Icon Svg={viewType.icon} className={classNames(className, {[cls.notSelected]: viewType.view !== view}, [])} />
                 </Button>
             ))}
         </div>
