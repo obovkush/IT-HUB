@@ -12,7 +12,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'import-module'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'import-module', 'unused-imports'],
     settings: {
         react: {
             version: 'detect', // React version. "detect" automatically picks the version you have installed.
@@ -30,6 +30,7 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
