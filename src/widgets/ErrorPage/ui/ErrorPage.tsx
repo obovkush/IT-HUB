@@ -2,12 +2,12 @@ import {useTranslation} from 'react-i18next';
 
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Button} from '@/shared/ui/Button';
-import {Page} from '@/widjets/Page';
+import {Page} from '@/widgets/Page';
 
 import cls from './ErrorPage.module.scss';
 
 interface ErrorPageProps {
-	className?: string;
+    className?: string;
 }
 
 export const ErrorPage = ({className = ''}: ErrorPageProps) => {

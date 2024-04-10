@@ -4,31 +4,31 @@ import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDeco
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {Theme} from '@/shared/const/theme';
 
-import {Sidebar} from './Sidebar';
+import {Navbar} from './Navbar';
 
-const meta: Meta<typeof Sidebar> = {
-    title: 'widjets/Sidebar',
-    component: Sidebar,
+const meta: Meta<typeof Navbar> = {
+    title: 'widgets/Navbar',
+    component: Navbar,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Sidebar>;
+type Story = StoryObj<typeof Navbar>;
 
 export const Default: Story = {
-    render: () => <Sidebar />,
+    render: () => <Navbar />,
 };
 Default.decorators = [StoreDecorator({})];
 
 export const Dark: Story = {
-    render: () => <Sidebar />,
+    render: () => <Navbar />,
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
-export const AuthSidebar: Story = {
-    render: () => <Sidebar />,
+export const AuthNavbar: Story = {
+    render: () => <Navbar />,
 };
-AuthSidebar.decorators = [
+AuthNavbar.decorators = [
     StoreDecorator({
         user: {authData: {}},
     }),
