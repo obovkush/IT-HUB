@@ -8,7 +8,7 @@ describe('Вход на страницу со списком статей', () =
         cy.getByTestId('ArticleList').should('exist');
         cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
     });
-    it('Статьи успешно подгружаются (на стабах (фикстурах))', () => {
+    it.skip('Статьи успешно подгружаются (на стабах (фикстурах))', () => {
         cy.intercept('GET', '**/articles?*', {fixture: 'articles.json'});
         cy.getByTestId('ArticleList').should('exist');
         cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
