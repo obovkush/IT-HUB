@@ -5,7 +5,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPluginInstance} from 'webpack';
-import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
+// import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 
 import {BuildOptions} from './types/config';
 
@@ -41,12 +41,12 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
         plugins.push(new HotModuleReplacementPlugin());
-        plugins.push(
-            new BundleAnalyzerPlugin({
-                openAnalyzer: false,
-                analyzerPort: 4444,
-            })
-        );
+        // plugins.push(
+        //     new BundleAnalyzerPlugin({
+        //         openAnalyzer: false,
+        //         analyzerPort: 4444,
+        //     })
+        // );
     }
 
     if (isProd) {
