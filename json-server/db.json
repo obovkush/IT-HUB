@@ -743,13 +743,35 @@
     },
     {
       "id": "2",
+      "firstname": "User",
+      "lastname": "User",
+      "age": 35,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "user",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Manager",
+      "lastname": "Manager",
+      "age": 35,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "manager",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
       "firstname": "Test",
       "lastname": "Test",
       "age": 35,
       "currency": "RUB",
       "country": "Belarus",
       "city": "Minsk",
-      "username": "user",
+      "username": "testuser",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
