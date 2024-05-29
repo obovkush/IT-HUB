@@ -1,7 +1,7 @@
 import {selectByTestId} from '../../helpers/selectByTestId';
 
 describe('Роутинг', () => {
-    describe('Пользователь НЕ авторизован', () => {
+    describe('Пользователь не авторизован', () => {
         it('Переход на главную страницу', () => {
             cy.visit('/');
             cy.get(selectByTestId('MainPage')).should('exist');
