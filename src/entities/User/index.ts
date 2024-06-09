@@ -8,3 +8,5 @@ export {UserRole} from './model/consts/userConsts';
 export type {UserSchema, User} from './model/types/user';
 
 export {isUserAdmin, isUserManager, getUserRoles} from './model/selectors/roleSelectors';
+export {useJsonSettings} from './model/selectors/jsonSettings';
+export {saveJsonSettings} from './model/services/saveJsonSettings';
