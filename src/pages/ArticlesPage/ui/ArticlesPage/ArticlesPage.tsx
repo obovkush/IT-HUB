@@ -1,9 +1,9 @@
-/* eslint-disable max-len */
 import {memo, useCallback} from 'react';
 
 import {useTranslation} from 'react-i18next';
 import {useSearchParams} from 'react-router-dom';
 
+import {ArticlePageGreeting} from '@/features/articlePageGreeting';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -41,9 +41,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page data-testid="ArticlesPage" onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
+            <Page data-testid='ArticlesPage' onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
                 <ArticlesPageFilters />
                 <ArticleInfiniteList className={cls.list} />
+                <ArticlePageGreeting />
             </Page>
         </DynamicModuleLoader>
     );
