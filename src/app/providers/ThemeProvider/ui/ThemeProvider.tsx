@@ -18,7 +18,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
     const user = localStorage.getItem('user');
 
     useEffect(() => {
-        if (user && defaultTheme) {
+        if (defaultTheme) {
             setTheme(defaultTheme);
             setThemeInited(true);
         }
