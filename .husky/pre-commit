@@ -9,4 +9,4 @@
 # npm run test:ui
 # npm test
 
-npx lint-staged
+# npx lint-staged

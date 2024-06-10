@@ -4,14 +4,11 @@ import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
 
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {
-    DynamicModuleLoader,
-    ReducersList,
-} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {Button, ButtonTheme} from '@/shared/ui/Button';
-import {Input} from '@/shared/ui/Input';
-import {Text, TextTheme} from '@/shared/ui/Text';
+import {Button, ButtonTheme} from '@/shared/ui/deprecated/Button';
+import {Input} from '@/shared/ui/deprecated/Input';
+import {Text, TextTheme} from '@/shared/ui/deprecated/Text';
 
 import cls from './LoginForm.module.scss';
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
@@ -22,7 +19,7 @@ import {loginByUsername} from '../../model/services/loginByUsername/loginByUsern
 import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 
 export interface LoginFormProps {
-	className?: string;
+    className?: string;
     onSuccess: () => void;
 }
 
@@ -63,12 +60,7 @@ const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
-                {error && (
-                    <Text
-                        text={t('Вы ввели неверный логин или пароль')}
-                        theme={TextTheme.ERROR}
-                    />
-                )}
+                {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
                 <Input
                     autofocus
                     type='text'
@@ -77,19 +69,8 @@ const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
                     onChange={onChangeUsername}
                     value={username}
                 />
-                <Input
-                    type='password'
-                    className={cls.input}
-                    placeholder={t('Введите пароль')}
-                    onChange={onChangePassword}
-                    value={password}
-                />
-                <Button
-                    theme={ButtonTheme.OUTLINE}
-                    className={cls.loginBtn}
-                    onClick={onLoginClick}
-                    disabled={isLoading}
-                >
+                <Input type='password' className={cls.input} placeholder={t('Введите пароль')} onChange={onChangePassword} value={password} />
+                <Button theme={ButtonTheme.OUTLINE} className={cls.loginBtn} onClick={onLoginClick} disabled={isLoading}>
                     {t('Войти')}
                 </Button>
             </div>
