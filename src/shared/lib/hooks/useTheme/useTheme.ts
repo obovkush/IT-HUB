@@ -28,8 +28,6 @@ export function useTheme(): UseThemeResult {
         }
         setTheme?.(newTheme);
 
-        document.body.className = newTheme;
-
         saveAction?.(newTheme);
     };
 

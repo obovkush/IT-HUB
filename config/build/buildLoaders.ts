@@ -8,8 +8,25 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     const {isDev} = options;
     const svgLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack']
-    }
+        use: [
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    icon: true,
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                name: 'convertColors',
+                                params: {
+                                    currentColor: true,
+                                },
+                            },
+                        ],
+                    },
+                },
+            },
+        ],
+    };
 
     const codeBabelLoader = buildBabelLoader({...options, isTsx: false});
     const tsxCodeBabelLoader = buildBabelLoader({...options, isTsx: true});
@@ -27,10 +44,10 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
             {
-                loader: 'file-loader'
-            }
-        ]
-    }
+                loader: 'file-loader',
+            },
+        ],
+    };
 
     return [
         fileLoader,
@@ -39,5 +56,5 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
         tsxCodeBabelLoader,
         // typescriptLoader,
         cssLoader,
-    ]
+    ];
 }
