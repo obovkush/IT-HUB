@@ -8,8 +8,8 @@ import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/Dynamic
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {Button, ButtonTheme} from '@/shared/ui/deprecated/Button';
 import {Input} from '@/shared/ui/deprecated/Input';
-import {HStack} from '@/shared/ui/deprecated/Stack';
 import {Text, TextTheme} from '@/shared/ui/deprecated/Text';
+import {HStack} from '@/shared/ui/redesigned/Stack';
 
 import cls from './AddCommentForm.module.scss';
 import {getAddCommentFormError, getAddCommentFormText} from '../../model/selectors/addCommentFormSelectors';
