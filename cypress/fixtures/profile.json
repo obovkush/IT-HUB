@@ -1,6 +1,6 @@
 {
     "id": "1",
-    "first": "test",
+    "firstname": "test",
     "lastname": "user",
     "age": 40,
     "currency": "EUR",
