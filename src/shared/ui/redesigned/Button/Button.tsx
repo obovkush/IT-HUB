@@ -34,20 +34,26 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
      * Увеличивает кнопку на всю свободную ширину
      */
     fullWidth?: boolean;
+
+    addonLeft?: ReactNode;
+    addonRight?: ReactNode;
 }
 
 export const Button = memo((props: ButtonProps) => {
-    const {className = '', children, variant = 'outline', square, disabled, fullWidth, size = 'm', ...otherProps} = props;
+    const {className = '', children, variant = 'outline', square, disabled, fullWidth, size = 'm', addonLeft, addonRight, ...otherProps} = props;
 
     const mods: Mods = {
         [cls.square]: square,
         [cls.disabled]: disabled,
         [cls.fullWidth]: fullWidth,
+        [cls.withAddon]: Boolean(addonLeft) || Boolean(addonRight),
     };
 
     return (
         <button type='button' className={classNames(cls.Button, mods, [className, cls[variant], cls[size]])} disabled={disabled} {...otherProps}>
+            {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
             {children}
+            {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
         </button>
     );
 });
