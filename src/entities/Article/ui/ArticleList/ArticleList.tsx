@@ -8,15 +8,15 @@ import {Text, TextSize} from '@/shared/ui/deprecated/Text';
 import cls from './ArticleList.module.scss';
 import {ArticleView} from '../../model/consts/articleConsts';
 import {Article} from '../../model/types/article';
-import {ArticleListItemSkeleton} from '../../ui/ArticleListItem/ArticleListItemSkeleton';
 import {ArticleListItem} from '../ArticleListItem/ArticleListItem';
+import {ArticleListItemSkeleton} from '../ArticleListItem/ArticleListItemSkeleton';
 
 interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
-    view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    view?: ArticleView;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -28,25 +28,20 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const {className = '', articles, view = ArticleView.SMALL, isLoading, target} = props;
     const {t} = useTranslation();
 
-    if (isLoading) {
-        return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>{getSkeletons(view)}</div>;
-    }
-
-    const renderArticle = (article: Article) => (
-        <ArticleListItem article={article} view={view} className={cls.card} key={article.id} target={target} />
-    );
-
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                <Text size={TextSize.M} title={t('Статьи не найдены')} />
+                <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         );
     }
 
     return (
-        <div data-testid='ArticleList' className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length > 0 ? articles.map(renderArticle) : null}
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])} data-testid='ArticleList'>
+            {articles.map((item) => (
+                <ArticleListItem article={item} view={view} target={target} key={item.id} className={cls.card} />
+            ))}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });
