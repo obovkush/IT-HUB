@@ -41,7 +41,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
 
         return (
-            <Card padding='24' max data-testid='ArticleListItem' className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <Card padding='24' fullWidth data-testid='ArticleListItem' className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <VStack max gap='16'>
                     <HStack gap='8' max>
                         {userInfo}
