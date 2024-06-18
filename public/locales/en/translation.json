@@ -50,5 +50,8 @@
   "Редактирование статьи с ID = ": "Edit article with ID = ",
   "Создание новой статьи": "Addind new article",
   "Создать статью": "Add article",
-  "It HUB": "It HUB"
+  "It HUB": "It HUB",
+  "{{count}} просмотров_zero": "{{count}} views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views"
 }
