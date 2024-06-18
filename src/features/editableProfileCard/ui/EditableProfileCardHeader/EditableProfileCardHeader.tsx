@@ -49,7 +49,7 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
         <ToggleFeatures
             feature='isAppRedesigned'
             on={
-                <Card padding='16' fullWidth border='partial'>
+                <Card padding='24' fullWidth border='partial'>
                     <HStack max justify='between' className={classNames('', {}, [className])}>
                         <Text title={t('Профиль')} />
                         {canEdit && (

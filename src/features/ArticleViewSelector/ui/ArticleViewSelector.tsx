@@ -59,9 +59,13 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                                 clickable
                                 onClick={onClick(viewType.view)}
                                 Svg={viewType.icon}
-                                className={classNames('', {
-                                    [cls.notSelected]: viewType.view !== view,
-                                }, [])}
+                                className={classNames(
+                                    '',
+                                    {
+                                        [cls.notSelected]: viewType.view !== view,
+                                    },
+                                    []
+                                )}
                             />
                         ))}
                     </HStack>
@@ -75,9 +79,13 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                                 width={24}
                                 height={24}
                                 Svg={viewType.icon}
-                                className={classNames('', {
-                                    [cls.notSelected]: viewType.view !== view,
-                                }, [])}
+                                className={classNames(
+                                    '',
+                                    {
+                                        [cls.notSelected]: viewType.view !== view,
+                                    },
+                                    []
+                                )}
                             />
                         </ButtonDeprecated>
                     ))}

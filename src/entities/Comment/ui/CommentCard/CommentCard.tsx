@@ -52,7 +52,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         <ToggleFeatures
             feature='isAppRedesigned'
             on={
-                <Card padding='24' border='round' fullWidth>
+                <Card padding='24' border='partial' fullWidth>
                     <VStack data-testid='CommentCard.Content' gap='8' max className={classNames(cls.CommentCardRedesigned, {}, [className])}>
                         <AppLink to={getRouteProfile(comment.user.id)}>
                             <HStack gap='8'>
