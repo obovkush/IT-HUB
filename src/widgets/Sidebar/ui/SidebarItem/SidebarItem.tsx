@@ -11,7 +11,7 @@ import {AppLink} from '@/shared/ui/redesigned/AppLink';
 import {Icon} from '@/shared/ui/redesigned/Icon';
 
 import cls from './SidebarItem.module.scss';
-import {SidebarItemType} from '../../model/types/items';
+import {SidebarItemType} from '../../model/types/sidebar';
 
 interface SidebarItemProps {
     item: SidebarItemType;
