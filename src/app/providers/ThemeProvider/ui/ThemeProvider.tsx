@@ -10,20 +10,20 @@ interface ThemeProviderProps {
     children: ReactNode;
 }
 
+const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
+
 export const ThemeProvider = (props: ThemeProviderProps) => {
     const {initialTheme, children} = props;
-    const {theme: defaultTheme} = useJsonSettings();
     const [isThemeInited, setThemeInited] = useState(false);
-    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme || Theme.LIGHT);
 
-    const user = localStorage.getItem('user');
+    const [theme, setTheme] = useState<Theme>(initialTheme || fallbackTheme || Theme.LIGHT);
 
     useEffect(() => {
-        if (defaultTheme) {
-            setTheme(defaultTheme);
+        if (!isThemeInited && initialTheme) {
+            setTheme(initialTheme);
             setThemeInited(true);
         }
-    }, [defaultTheme, isThemeInited, user]);
+    }, [initialTheme, isThemeInited]);
 
     useEffect(() => {
         document.body.className = theme;
