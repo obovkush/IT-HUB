@@ -1,6 +1,7 @@
 import {withThemeByClassName} from '@storybook/addon-themes';
 import {Preview} from '@storybook/react';
 
+import {FeaturesFlagsDecorator} from '../../src/shared/config/storybook/FeaturesFlagsDecorator/FeaturesFlagsDecorator';
 import {RouterDecorator} from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import {StyleDecorator} from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import {SuspenseDecorator} from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
@@ -29,6 +30,7 @@ const preview: Preview = {
         }),
         RouterDecorator,
         SuspenseDecorator,
+        FeaturesFlagsDecorator({}),
     ],
 
     globalTypes: {
@@ -61,4 +63,5 @@ const preview: Preview = {
         },
     },
 };
+
 export default preview;
