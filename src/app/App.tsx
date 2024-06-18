@@ -3,6 +3,7 @@ import {Suspense, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 
 import {getUserInited, initAuthData} from '@/entities/User';
+import {AppLoaderLayout} from '@/shared/layouts/AppLoaderLayout';
 import {MainLayout} from '@/shared/layouts/MainLayout';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {ToggleFeatures} from '@/shared/lib/features';
@@ -26,14 +27,23 @@ const App: React.FC = () => {
     }, [dispatch, inited]);
 
     if (!inited) {
-        return <PageLoader />;
+        return (
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <div id='app' className={classNames('app_redesigned', {}, [theme])}>
+                        <AppLoaderLayout />
+                    </div>
+                }
+                off={<PageLoader />}
+            />
+        );
     }
-
     return (
         <ToggleFeatures
             feature='isAppRedesigned'
             off={
-                <div id="app" className={classNames('app', {}, [theme])}>
+                <div id='app' className={classNames('app', {}, [theme])}>
                     <Suspense fallback=''>
                         <Navbar />
                         <div className='content-page'>
@@ -44,7 +54,7 @@ const App: React.FC = () => {
                 </div>
             }
             on={
-                <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+                <div id='app' className={classNames('app_redesigned', {}, [theme])}>
                     <Suspense fallback=''>
                         <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
                     </Suspense>
