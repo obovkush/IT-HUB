@@ -13,12 +13,14 @@ import {Navbar} from '@/widgets/Navbar';
 import {PageLoader} from '@/widgets/PageLoader';
 import {Sidebar} from '@/widgets/Sidebar';
 
+import {useAppToolbar} from './lib/useAppToolbar';
 import {AppRouter} from './router';
 
 const App: React.FC = () => {
     const {theme} = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
+    const toolbar = useAppToolbar();
 
     useEffect(() => {
         if (!inited) {
@@ -56,7 +58,7 @@ const App: React.FC = () => {
             on={
                 <div id='app' className={classNames('app_redesigned', {}, [theme])}>
                     <Suspense fallback=''>
-                        <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
+                        <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} toolbar={toolbar} />
                     </Suspense>
                 </div>
             }
