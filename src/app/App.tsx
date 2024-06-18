@@ -14,6 +14,7 @@ import {PageLoader} from '@/widgets/PageLoader';
 import {Sidebar} from '@/widgets/Sidebar';
 
 import {useAppToolbar} from './lib/useAppToolbar';
+import {withTheme} from './providers/ThemeProvider/ui/withTheme';
 import {AppRouter} from './router';
 
 const App: React.FC = () => {
@@ -66,4 +67,4 @@ const App: React.FC = () => {
     );
 };
 
-export default App;
+export default withTheme(App);
